@@ -4,6 +4,6 @@ export enum MetadataKeys {
 }
 
 export enum HttpMethods {
-    Get = 'Get',
-    Post = 'Post'
+    Get = 'get', // These have to be lower case as express router methods are lower case
+    Post = 'post'
 }
