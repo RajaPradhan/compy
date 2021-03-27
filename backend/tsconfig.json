@@ -16,7 +16,8 @@
         "strict": true,
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
-        "types": ["reflect-metadata"]
+        "types": ["reflect-metadata", "jest"],
+        "typeRoots": ["node_modules/@types", "src/@types"]
     },
     "include": ["src/**/*"],
     "exclude": ["node_modules", "**/*.test.ts"]

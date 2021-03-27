@@ -10,7 +10,9 @@
         "build": "rimraf ./dist && tsc",
         "start:build": "tsc -w",
         "start:run": "nodemon ./dist/index.js",
-        "start": "concurrently npm:start:*"
+        "start": "concurrently npm:start:*",
+        "test": "jest -c ./jest.config.json",
+        "test:watch": "jest -c ./jest.config.json --watchAll=true"
     },
     "devDependencies": {
         "@types/body-parser": "^1.19.0",
@@ -27,6 +29,7 @@
         "nodemon": "^2.0.7",
         "prettier": "^2.2.1",
         "rimraf": "^3.0.2",
+        "supertest": "^6.1.3",
         "ts-jest": "^26.5.4",
         "typescript": "^4.2.3",
         "typescript-eslint": "^0.0.1-alpha.0"
