@@ -15,7 +15,7 @@ export class CompanyController {
 
     private constructor(
         @inject(COMPANY_DI_TYPES.ICompanyService)
-        private companyService: ICompanyService
+        public companyService: ICompanyService
     ) {}
 
     static getInstance(): CompanyController {

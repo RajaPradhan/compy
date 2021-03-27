@@ -36,13 +36,13 @@ export class CompanyRepository implements ICompanyRepository {
             return companiesBySpeciality;
         }
         return companiesBySpeciality.filter((company: Company) =>
-            company.name.includes(searchTerm)
+            company.name.toLowerCase().includes(searchTerm.toLowerCase())
         );
     }
 
     getCompanies({ searchTerm, specialities }: CompanyFilters): Company[] {
         const companiesBySpeciality = this.filterCompaniesBySpeciality(
-            specialities.split(',') as Speciailty[]
+            specialities.length ? (specialities.split(',') as Speciailty[]) : []
         );
 
         const companiesBySearchTerm = this.filterCompaniesBySearchTerm(
