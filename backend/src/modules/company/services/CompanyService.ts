@@ -1,18 +1,20 @@
-import { CompanyRepository, ICompanyRepository } from '../repositories';
+import { injectable, inject } from 'inversify';
+
+import { ICompanyRepository } from '../repositories';
 import { Company } from '../models';
-import { CompanyFilters } from '../types';
+import { CompanyFilters, COMPANY_DI_TYPES } from '../types';
 
 export interface ICompanyService {
     getCompanyById(id: string): Company;
     getCompanies(filters: CompanyFilters): Company[];
 }
 
+@injectable()
 export class CompanyService implements ICompanyService {
-    companyRepository: ICompanyRepository;
-
-    constructor() {
-        this.companyRepository = new CompanyRepository();
-    }
+    constructor(
+        @inject(COMPANY_DI_TYPES.ICompanyRepository)
+        private companyRepository: ICompanyRepository
+    ) {}
 
     getCompanyById(id: string): Company {
         return this.companyRepository.getCompanyById(id);

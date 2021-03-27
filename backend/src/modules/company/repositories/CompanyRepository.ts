@@ -1,3 +1,5 @@
+import { injectable } from 'inversify';
+
 import { Company } from '../models';
 import { Speciailty, CompanyFilters } from '../types';
 import { companies } from '../../../data/companies';
@@ -7,6 +9,7 @@ export interface ICompanyRepository {
     getCompanies(filters: CompanyFilters): Company[];
 }
 
+@injectable()
 export class CompanyRepository implements ICompanyRepository {
     getCompanyById(id: string): Company {
         return companies.find(
