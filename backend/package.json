@@ -8,12 +8,15 @@
   "scripts": {
     "lint": "eslint . --ext .ts",
     "build": "rimraf ./dist && tsc",
-    "start": "yarn build && nodemon ./dist/index.js --watch ./dist"
+    "start:build": "tsc -w",
+    "start:run": "nodemon ./dist/index.js",
+    "start": "concurrently npm:start:*"
   },
   "devDependencies": {
     "@types/jest": "^26.0.22",
     "@typescript-eslint/eslint-plugin": "^4.19.0",
     "@typescript-eslint/parser": "^4.19.0",
+    "concurrently": "^6.0.0",
     "eslint": "^7.23.0",
     "eslint-plugin-jest": "^24.3.2",
     "husky": "^5.2.0",
