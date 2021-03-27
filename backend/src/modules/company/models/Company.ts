@@ -7,7 +7,7 @@ export const enum Speciailty {
 
 export interface CompanyFilters {
     searchTerm: string;
-    specialities: Speciailty[];
+    specialities: string;
 }
 
 export interface Company {

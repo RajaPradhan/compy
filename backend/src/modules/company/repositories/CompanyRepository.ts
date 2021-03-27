@@ -14,6 +14,9 @@ export class CompanyRepository implements ICompanyRepository {
     }
 
     private filterCompaniesBySpeciality(specialities: Speciailty[]): Company[] {
+        if (!specialities.length) {
+            return companies;
+        }
         return companies.filter((company: Company) =>
             specialities.some((speciailty: Speciailty) =>
                 company.specialities.includes(speciailty)
@@ -25,14 +28,17 @@ export class CompanyRepository implements ICompanyRepository {
         companiesBySpeciality: Company[],
         searchTerm: string
     ): Company[] {
-        return companiesBySpeciality.filter(
-            (company: Company) => company.name === searchTerm
+        if (!searchTerm) {
+            return companiesBySpeciality;
+        }
+        return companiesBySpeciality.filter((company: Company) =>
+            company.name.includes(searchTerm)
         );
     }
 
     getCompanies({ searchTerm, specialities }: CompanyFilters): Company[] {
         const companiesBySpeciality = this.filterCompaniesBySpeciality(
-            specialities
+            specialities.split(',') as Speciailty[]
         );
 
         const companiesBySearchTerm = this.filterCompaniesBySearchTerm(
