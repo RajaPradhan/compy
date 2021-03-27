@@ -1,4 +1,5 @@
-import { Company, Speciailty, CompanyFilters } from '../models';
+import { Company } from '../models';
+import { Speciailty, CompanyFilters } from '../types';
 import { companies } from '../../../data/companies';
 
 export interface ICompanyRepository {

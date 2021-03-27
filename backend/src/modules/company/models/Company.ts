@@ -1,14 +1,4 @@
-export const enum Speciailty {
-    Excavation = 'Excavation',
-    Plumbing = 'Plumbing',
-    Electrical = 'Electrical',
-    Architecture = 'Architecture'
-}
-
-export interface CompanyFilters {
-    searchTerm: string;
-    specialities: string;
-}
+import { Speciailty } from '../types';
 
 export interface Company {
     id: string;

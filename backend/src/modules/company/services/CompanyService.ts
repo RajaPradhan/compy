@@ -1,5 +1,6 @@
 import { CompanyRepository, ICompanyRepository } from '../repositories';
-import { Company, CompanyFilters } from '../models';
+import { Company } from '../models';
+import { CompanyFilters } from '../types';
 
 export interface ICompanyService {
     getCompanyById(id: string): Company;
