@@ -18,11 +18,13 @@ const useStyles = makeStyles(() => ({
   contentContainer: {
     padding: '20px',
   },
+  logoContainer: {
+    width: '100%',
+    height: '100%',
+  },
   logo: {
-    width: ({ showCompanyDescription }: Props) =>
-      showCompanyDescription ? '260px' : '150px',
-    height: ({ showCompanyDescription }: Props) =>
-      showCompanyDescription ? '260px' : '150px',
+    width: '85%',
+    height: '100%',
   },
   specialityContainer: {
     display: 'flex',
@@ -37,10 +39,14 @@ const useStyles = makeStyles(() => ({
 
   locationContainer: {
     display: 'flex',
+    padding: '10px 0',
     '& svg': {
       paddingRight: '4px',
       fontSize: '20px',
     },
+  },
+  specialityBlock: {
+    padding: '10px 0',
   },
 }));
 
@@ -49,10 +55,11 @@ interface Props {
   showCompanyDescription?: boolean;
 }
 
-const CompanyDisplayCard = (props: Props) => {
-  const classes = useStyles(props);
-
-  const { company, showCompanyDescription = false } = props;
+const CompanyDisplayCard = ({
+  company,
+  showCompanyDescription = false,
+}: Props) => {
+  const classes = useStyles();
 
   const { id, name, logoUrl, specialities, city, description } = company;
 
@@ -67,7 +74,7 @@ const CompanyDisplayCard = (props: Props) => {
         data-testid="company-display-card"
       >
         <Grid container className={classes.contentContainer}>
-          <Grid item xs={3}>
+          <Grid item xs={3} className={classes.logoContainer}>
             <img
               className={classes.logo}
               src={logoUrl}
@@ -93,7 +100,7 @@ const CompanyDisplayCard = (props: Props) => {
                 <Typography variant="body1">{description}</Typography>
               </Grid>
             )}
-            <Grid item xs={12}>
+            <Grid item xs={12} className={classes.specialityBlock}>
               <Typography variant="body1">
                 <strong>Specialities</strong>
               </Typography>

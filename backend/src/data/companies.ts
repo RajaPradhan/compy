@@ -8,15 +8,20 @@ export const companies: Company[] = [
     {
         id: '01F1CPNKBSZB15BHHB7DN9X601',
         name: 'Construction Delta Inc.',
-        logoUrl: 'http://placekitten.com/200/300',
-        specialities: [Speciailty.Excavation, Speciailty.Architecture],
+        logoUrl: 'http://placekitten.com/500/500',
+        specialities: [
+            Speciailty.Excavation,
+            Speciailty.Architecture,
+            Speciailty.Electrical,
+            Speciailty.Plumbing
+        ],
         city: 'Berlin',
         description
     },
     {
         id: '01F1CPNKBSZB15BHHB7DN9X602',
         name: 'Constructopedia GmbH',
-        logoUrl: 'http://placekitten.com/200/300',
+        logoUrl: 'http://placekitten.com/500/500',
         specialities: [
             Speciailty.Excavation,
             Speciailty.Architecture,
@@ -28,7 +33,7 @@ export const companies: Company[] = [
     {
         id: '01F1CPNKBSZB15BHHB7DN9X603',
         name: 'Builders Pavilion Inc.',
-        logoUrl: 'http://placekitten.com/200/300',
+        logoUrl: 'http://placekitten.com/500/500',
         specialities: [Speciailty.Excavation, Speciailty.Plumbing],
         city: 'Munich',
         description
@@ -36,7 +41,7 @@ export const companies: Company[] = [
     {
         id: '01F1CPNKBSZB15BHHB7DN9X604',
         name: 'Builders Combat',
-        logoUrl: 'http://placekitten.com/200/300',
+        logoUrl: 'http://placekitten.com/500/500',
         specialities: [Speciailty.Electrical, Speciailty.Architecture],
         city: 'Berlin',
         description
@@ -44,7 +49,7 @@ export const companies: Company[] = [
     {
         id: '01F1CPNKBSZB15BHHB7DN9X605',
         name: 'Garrison & Garrison Bros. Inc.',
-        logoUrl: 'http://placekitten.com/200/300',
+        logoUrl: 'http://placekitten.com/500/500',
         specialities: [
             Speciailty.Excavation,
             Speciailty.Architecture,
@@ -57,7 +62,7 @@ export const companies: Company[] = [
     {
         id: '01F1CPNKBSZB15BHHB7DN9X606',
         name: 'Alpha Construction Inc.',
-        logoUrl: 'http://placekitten.com/200/300',
+        logoUrl: 'http://placekitten.com/500/500',
         specialities: [
             Speciailty.Excavation,
             Speciailty.Architecture,
@@ -69,7 +74,7 @@ export const companies: Company[] = [
     {
         id: '01F1CPNKBSZB15BHHB7DN9X607',
         name: 'Construction Delta',
-        logoUrl: 'http://placekitten.com/200/300',
+        logoUrl: 'http://placekitten.com/500/500',
         specialities: [Speciailty.Excavation, Speciailty.Architecture],
         city: 'Berlin',
         description
@@ -77,7 +82,7 @@ export const companies: Company[] = [
     {
         id: '01F1CPNKBSZB15BHHB7DN9X608',
         name: 'Lehman Construction GmbH',
-        logoUrl: 'http://placekitten.com/200/300',
+        logoUrl: 'http://placekitten.com/500/500',
         specialities: [
             Speciailty.Architecture,
             Speciailty.Electrical,
@@ -89,7 +94,7 @@ export const companies: Company[] = [
     {
         id: '01F1CPNKBSZB15BHHB7DN9X609',
         name: 'Builders Muse',
-        logoUrl: 'http://placekitten.com/200/300',
+        logoUrl: 'http://placekitten.com/500/500',
         specialities: [Speciailty.Excavation, Speciailty.Plumbing],
         city: 'Berlin',
         description
@@ -97,7 +102,7 @@ export const companies: Company[] = [
     {
         id: '01F1CPNKBSZB15BHHB7DN9X610',
         name: 'Pro Constructors Inc.',
-        logoUrl: 'http://placekitten.com/200/300',
+        logoUrl: 'http://placekitten.com/500/500',
         specialities: [
             Speciailty.Excavation,
             Speciailty.Architecture,
