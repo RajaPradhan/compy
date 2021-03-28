@@ -36,7 +36,7 @@ describe('Tests for Dashboard page', () => {
 
     await waitFor(() =>
       expect(getByTestId(Selectors.TOTAL_RESULT)).toHaveTextContent(
-        'Total result: 6',
+        'Total result: 7',
       ),
     );
   });

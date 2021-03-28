@@ -22,7 +22,7 @@ export class CompanyRepository implements ICompanyRepository {
             return companies;
         }
         return companies.filter((company: Company) =>
-            specialities.every((speciailty: Speciailty) =>
+            specialities.some((speciailty: Speciailty) =>
                 company.specialities.includes(speciailty)
             )
         );
