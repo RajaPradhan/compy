@@ -20,7 +20,9 @@ const Header = () => {
     <AppBar position="relative" className={classes.appBar}>
       <Grid container className={classes.headerContainer}>
         <Grid item xs={12}>
-          <Typography variant="h4">Compy</Typography>
+          <Typography variant="h4" data-testid="company-logo">
+            Compy
+          </Typography>
         </Grid>
       </Grid>
     </AppBar>

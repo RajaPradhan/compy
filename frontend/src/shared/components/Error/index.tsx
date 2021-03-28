@@ -20,7 +20,9 @@ const Error = ({ message }: Props) => {
 
   return (
     <div className={classes.errorContainer}>
-      <Typography variant="h6">{message}</Typography>
+      <Typography variant="h6" data-testid="error-message">
+        {message}
+      </Typography>
     </div>
   );
 };

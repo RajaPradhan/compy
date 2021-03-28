@@ -31,7 +31,6 @@ const useFetchCompanies = () => {
         payload,
       });
     } catch (error) {
-      console.log('error=', error);
       companiesDispatch({ type: CompaniesActionType.FETCH_COMPANIES_FAILURE });
     }
   };
@@ -46,7 +45,6 @@ const useFetchCompanies = () => {
         payload,
       });
     } catch (error) {
-      console.log('error=', error);
       companiesDispatch({ type: CompaniesActionType.FETCH_COMPANIES_FAILURE });
     }
   };

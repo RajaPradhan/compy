@@ -19,8 +19,10 @@ const useStyles = makeStyles(() => ({
     padding: '20px',
   },
   logo: {
-    width: '150px',
-    height: '150px',
+    width: ({ showCompanyDescription }: Props) =>
+      showCompanyDescription ? '260px' : '150px',
+    height: ({ showCompanyDescription }: Props) =>
+      showCompanyDescription ? '260px' : '150px',
   },
   specialityContainer: {
     display: 'flex',
@@ -47,11 +49,10 @@ interface Props {
   showCompanyDescription?: boolean;
 }
 
-const CompanyDisplayCard = ({
-  company,
-  showCompanyDescription = false,
-}: Props) => {
-  const classes = useStyles();
+const CompanyDisplayCard = (props: Props) => {
+  const classes = useStyles(props);
+
+  const { company, showCompanyDescription = false } = props;
 
   const { id, name, logoUrl, specialities, city, description } = company;
 

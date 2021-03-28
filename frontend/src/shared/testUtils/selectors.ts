@@ -6,6 +6,9 @@ enum Selectors {
   SEARCH_FIELD = 'div[data-testid="search-field"] input[type="text"]',
   NAVIGATE_TO_DASHBOARD_BUTTON = 'button[data-testid="navigate-back-button"]',
   COMPANY_NAME_IN_DISPLAY_CARD = 'h6[data-testid="company-name"]',
+  ERROR_MESSAGE = 'error-message',
+  COMPANY_LOGO = 'company-logo',
+  LAYOUT_CHILD = 'layout-child',
 }
 
 export default Selectors;
