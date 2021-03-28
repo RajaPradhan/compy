@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import debounce from 'lodash.debounce';
 import {
   Grid,
   makeStyles,
@@ -104,7 +105,7 @@ const Dashboard = () => {
           <TextField
             className={classes.searchTextField}
             placeholder="Search by company name"
-            onChange={handleSearchTermChange}
+            onChange={debounce(handleSearchTermChange, 100)}
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">

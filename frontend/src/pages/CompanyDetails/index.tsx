@@ -11,7 +11,7 @@ import { Company } from '../Dashboard/types';
 
 const useStyles = makeStyles(() => ({
   navigationContainer: {
-    padding: '100px 0 30px',
+    padding: '40px 0',
   },
 }));
 
