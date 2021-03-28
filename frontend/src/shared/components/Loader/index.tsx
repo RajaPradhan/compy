@@ -21,9 +21,9 @@ const Loader = ({ repeat = 1 }: Props) => {
   const classes = useStyles();
 
   return (
-    <>
-      {[...rangeGenerator(0, repeat)].map(() => (
-        <Card variant="outlined" className={classes.marginBottom20}>
+    <div data-testid="loader">
+      {[...rangeGenerator(0, repeat)].map((i: number) => (
+        <Card key={i} variant="outlined" className={classes.marginBottom20}>
           <Grid container className={classes.contentContainer}>
             <Grid item xs={3}>
               <Skeleton variant="rect" width={150} height={150} />
@@ -42,7 +42,7 @@ const Loader = ({ repeat = 1 }: Props) => {
           </Grid>
         </Card>
       ))}
-    </>
+    </div>
   );
 };
 

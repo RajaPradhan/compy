@@ -103,6 +103,7 @@ const Dashboard = () => {
       <Grid item xs={12} className={classes.searchBarContainer}>
         <Grid item xs={9}>
           <TextField
+            data-testid="search-field"
             className={classes.searchTextField}
             placeholder="Search by company name"
             onChange={debounce(handleSearchTermChange, 100)}
@@ -117,7 +118,7 @@ const Dashboard = () => {
         </Grid>
       </Grid>
       <Grid item xs={12} className={classes.resultCountContainer}>
-        <Typography variant="h6">{`Total result: ${
+        <Typography variant="h6" data-testid="total-result">{`Total result: ${
           companiesState.data?.length || 0
         }`}</Typography>
       </Grid>

@@ -60,7 +60,11 @@ const CompanyDisplayCard = ({
 
   return (
     <Link to={`/company/${id}`} className={classes.link}>
-      <Card variant="outlined" className={classes.card}>
+      <Card
+        variant="outlined"
+        className={classes.card}
+        data-testid="company-display-card"
+      >
         <Grid container className={classes.contentContainer}>
           <Grid item xs={3}>
             <img
@@ -75,7 +79,11 @@ const CompanyDisplayCard = ({
           </Grid>
           <Grid item xs={9}>
             <Grid item xs={12}>
-              <Typography variant="h6" color="primary">
+              <Typography
+                variant="h6"
+                color="primary"
+                data-testid="company-name"
+              >
                 {name}
               </Typography>
             </Grid>
@@ -91,7 +99,7 @@ const CompanyDisplayCard = ({
 
               {specialities.map((speciality: string) => {
                 return (
-                  <div className={classes.specialityContainer}>
+                  <div className={classes.specialityContainer} key={speciality}>
                     <CheckIcon />
                     <Typography variant="body1">{speciality}</Typography>
                   </div>

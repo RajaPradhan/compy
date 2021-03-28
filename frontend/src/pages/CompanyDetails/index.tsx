@@ -7,7 +7,6 @@ import CompanyDisplayCard from 'shared/components/CompanyDisplayCard';
 import { useFetchCompanies } from 'shared/hooks';
 import Error from 'shared/components/Error';
 import Loader from 'shared/components/Loader';
-import { Company } from '../Dashboard/types';
 
 const useStyles = makeStyles(() => ({
   navigationContainer: {
@@ -51,6 +50,7 @@ const CompanyDetails = () => {
     <Grid container>
       <Grid item xs={12} className={classes.navigationContainer}>
         <Button
+          data-testid="navigate-back-button"
           variant="outlined"
           startIcon={<NavigateBefore />}
           onClick={handleBackNavigation}
