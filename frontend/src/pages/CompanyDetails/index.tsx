@@ -30,7 +30,7 @@ const CompanyDetails = () => {
 
   const getContent = () => {
     if (companiesState.loading) {
-      return <Loader repeat={5} />;
+      return <Loader />;
     }
 
     if (companiesState.error) {
