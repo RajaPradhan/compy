@@ -56,7 +56,8 @@ const Dashboard = () => {
 
   useEffect(() => {
     fetchCompanies(filters);
-  }, [filters]);
+    // Disabling lint as fetchCompanies cannot be used in the dep array
+  }, [filters]); // eslint-disable-line
 
   const handleSearchTermChange = ({
     target: { value },

@@ -23,7 +23,8 @@ const CompanyDetails = () => {
 
   useEffect(() => {
     fetchCompanyById(id);
-  }, [id]);
+    // Disabling lint as fetchCompanyById cannot be used in the dep array
+  }, [id]); // eslint-disable-line
 
   const handleBackNavigation = () => history.push('/');
 
