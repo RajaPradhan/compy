@@ -2,7 +2,7 @@
     "name": "backend",
     "version": "1.0.0",
     "repository": "https://github.com/RajaPradhan/compy.git",
-    "description": "Dashboard of construction companies",
+    "description": "Dashboard for construction companies",
     "main": "index.js",
     "license": "MIT",
     "scripts": {
@@ -12,7 +12,8 @@
         "start:run": "nodemon ./dist/index.js",
         "start": "concurrently npm:start:*",
         "test": "jest -c ./jest.config.json",
-        "test:watch": "jest -c ./jest.config.json --watchAll=true"
+        "test:watch": "jest -c ./jest.config.json --watchAll=true",
+        "serve": "yarn build && node ./dist/index.js"
     },
     "devDependencies": {
         "@types/body-parser": "^1.19.0",
@@ -52,5 +53,8 @@
         "express": "^4.17.1",
         "inversify": "^5.0.5",
         "reflect-metadata": "^0.1.13"
+    },
+    "engines": {
+        "node": "14.x"
     }
 }

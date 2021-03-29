@@ -1,0 +1,1 @@
+serve: yarn build && node ./dist/index.js
