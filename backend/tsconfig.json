@@ -5,7 +5,7 @@
         "sourceMap": true,
         "noImplicitAny": false,
         "target": "es5",
-        "lib": ["es6"],
+        "lib": ["es2016", "dom"],
         "module": "commonjs",
         "moduleResolution": "node",
         "resolveJsonModule": true,
@@ -16,7 +16,7 @@
         "strict": true,
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
-        "types": ["reflect-metadata", "jest"],
+        "types": ["reflect-metadata", "jest", "node"],
         "typeRoots": ["node_modules/@types", "src/@types"]
     },
     "include": ["src/**/*"],
