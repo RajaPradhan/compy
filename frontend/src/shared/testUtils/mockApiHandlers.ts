@@ -14,21 +14,14 @@ const fetchCompanyById = (req: RestRequest, res: any, ctx: any) => {
 };
 
 const fetchCompanies = (req: RestRequest, res: any, ctx: any) => {
-  const urlSearchParams = new URLSearchParams(req.body as any);
-
-  const searchTerm = urlSearchParams.get('searchTerm') || '';
-  const specialities = urlSearchParams.get('specialities') || '';
-
-  const selectedSpecialities = specialities.length
-    ? (specialities.split(',') as Speciailty[])
-    : [];
+  const { searchTerm, specialities } = req.body as any;
 
   const filterPipe = pipe(
     filterCompaniesBySpeciality,
     filterCompaniesBySearchTerm(searchTerm),
   );
 
-  const result = filterPipe(selectedSpecialities);
+  const result = filterPipe(specialities);
 
   return res(ctx.status(200), ctx.json(result));
 };

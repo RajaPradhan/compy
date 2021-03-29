@@ -30,7 +30,7 @@ describe('Tests for CompanyService', () => {
 
         const filters = {
             searchTerm: 'constructor',
-            specialities: 'Excavation'
+            specialities: ['Excavation']
         };
 
         companyService.getCompanies(filters);

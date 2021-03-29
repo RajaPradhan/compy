@@ -19,17 +19,13 @@ export class CompanyRepository implements ICompanyRepository {
     }
 
     getCompanies({ searchTerm, specialities }: CompanyFilters): Company[] {
-        const selectedSpecialities = specialities.length
-            ? (specialities.split(',') as Speciailty[])
-            : [];
-
         // The pipe filters the companies by specialities first and then pass the result to filter by search term
         const filterPipe = pipe(
             this.filterCompaniesBySpeciality,
             this.filterCompaniesBySearchTerm(searchTerm)
         );
 
-        const filteredResult = filterPipe(selectedSpecialities);
+        const filteredResult = filterPipe(specialities);
 
         return filteredResult;
     }

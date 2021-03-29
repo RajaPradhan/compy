@@ -33,7 +33,7 @@ describe('Tests for CompanyController', () => {
         const mockReq = {
             body: {
                 searchTerm: 'constructor',
-                specialities: 'Excavation'
+                specialities: ['Excavation']
             }
         };
 

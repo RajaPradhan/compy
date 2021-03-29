@@ -11,19 +11,15 @@ const useFetchCompanies = () => {
     initialCompaniesState,
   );
 
-  const fetchCompanies = async ({ searchTerm, specialities }: Filters) => {
-    const filterPayload = new URLSearchParams();
-    filterPayload.append('searchTerm', searchTerm);
-    filterPayload.append('specialities', specialities.toString());
-
+  const fetchCompanies = async (filters: Filters) => {
     companiesDispatch({ type: CompaniesActionType.FETCH_COMPANIES_LOADING });
     try {
       const companies = await fetch(API_ENDPOINT, {
         method: 'post',
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
+          'Content-Type': 'application/json',
         },
-        body: filterPayload,
+        body: JSON.stringify(filters),
       });
       const payload = await companies.json();
       companiesDispatch({

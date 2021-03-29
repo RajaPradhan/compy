@@ -37,10 +37,9 @@ export class CompanyController {
 
     @post('/')
     getCompanies(req: Request, res: Response): void {
+        const filters = req.body;
         res.send(
-            CompanyController.getInstance().companyService.getCompanies(
-                req.body
-            )
+            CompanyController.getInstance().companyService.getCompanies(filters)
         );
     }
 }

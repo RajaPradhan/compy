@@ -18,7 +18,7 @@ describe('Tests for CompanyRepository', () => {
     it('should return a list of companies based on given filter', () => {
         const filters = {
             searchTerm: 'construct',
-            specialities: 'Excavation,Plumbing'
+            specialities: ['Excavation', 'Plumbing']
         };
 
         const result = companyRepository.getCompanies(filters);
@@ -28,7 +28,7 @@ describe('Tests for CompanyRepository', () => {
     it('should return all the companies', () => {
         const filters = {
             searchTerm: '',
-            specialities: ''
+            specialities: []
         };
 
         const result = companyRepository.getCompanies(filters);

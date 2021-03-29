@@ -14,10 +14,10 @@ describe('Tests the application routes', () => {
     it('should return companies by filters', () => {
         return request(app)
             .post('/')
-            .set('Content-Type', 'application/x-www-form-urlencoded')
+            .set('Content-Type', 'application/json')
             .send({
                 searchTerm: 'construct',
-                specialities: 'Excavation,Plumbing'
+                specialities: ['Excavation', 'Plumbing']
             })
             .expect(200)
             .expect(res => expect(res.body).toHaveLength(6));
@@ -26,10 +26,10 @@ describe('Tests the application routes', () => {
     it('should return all the companies', () => {
         return request(app)
             .post('/')
-            .set('Content-Type', 'application/x-www-form-urlencoded')
+            .set('Content-Type', 'application/json')
             .send({
                 searchTerm: '',
-                specialities: ''
+                specialities: []
             })
             .expect(200)
             .expect(res => expect(res.body).toHaveLength(10));
