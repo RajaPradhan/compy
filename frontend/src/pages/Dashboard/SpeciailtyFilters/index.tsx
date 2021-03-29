@@ -12,7 +12,7 @@ import {
 } from '@material-ui/core';
 import { FilterList as FilterIcon } from '@material-ui/icons';
 
-import { Speciailty } from '../types';
+import { Speciailty } from 'shared/types';
 
 const useStyles = makeStyles(() => ({
   card: {

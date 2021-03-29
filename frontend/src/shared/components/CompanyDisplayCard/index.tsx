@@ -6,7 +6,7 @@ import {
 } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
 
-import { Company } from 'pages/Dashboard/types';
+import { Company } from 'shared/types';
 
 const useStyles = makeStyles(() => ({
   link: {

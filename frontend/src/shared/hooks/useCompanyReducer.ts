@@ -2,7 +2,7 @@ import {
   CompaniesState,
   CompaniesAction,
   CompaniesActionType,
-} from 'pages/Dashboard/types';
+} from 'shared/types';
 
 const useCompanyReducer = () => {
   const state: CompaniesState = {

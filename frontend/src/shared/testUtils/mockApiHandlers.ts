@@ -1,6 +1,6 @@
 import { rest, RestRequest } from 'msw';
 
-import { Company, Speciailty } from '../../pages/Dashboard/types';
+import { Company, Speciailty } from 'shared/types';
 import { companies } from './mockData';
 
 const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT as string;

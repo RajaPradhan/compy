@@ -14,7 +14,7 @@ import Error from 'shared/components/Error';
 import Loader from 'shared/components/Loader';
 import SpeciailtyFilters, { Specialities } from './SpeciailtyFilters';
 import { useFetchCompanies } from 'shared/hooks';
-import { Filters, Company } from './types';
+import { Filters, Company } from 'shared/types';
 
 const useStyles = makeStyles(() => ({
   dashboardContainer: {

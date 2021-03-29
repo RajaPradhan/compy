@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import { Company, Speciailty } from 'pages/Dashboard/types';
+import { Company, Speciailty } from 'shared/types';
 import Selectors from 'shared/testUtils/selectors';
 import CompanyDisplayCard from '../index';
 

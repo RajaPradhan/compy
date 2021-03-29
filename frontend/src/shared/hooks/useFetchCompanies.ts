@@ -1,7 +1,7 @@
 import { useReducer } from 'react';
 
 import useCompanyReducer from './useCompanyReducer';
-import { CompaniesActionType, Filters } from 'pages/Dashboard/types';
+import { CompaniesActionType, Filters } from 'shared/types';
 
 const useFetchCompanies = () => {
   const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT as string;
