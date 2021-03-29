@@ -19,11 +19,16 @@ const fetchCompanies = (req: RestRequest, res: any, ctx: any) => {
   const searchTerm = urlSearchParams.get('searchTerm') || '';
   const specialities = urlSearchParams.get('specialities') || '';
 
-  const companiesBySpeciality = filterCompaniesBySpeciality(
-    specialities.length ? (specialities.split(',') as Speciailty[]) : [],
+  const selectedSpecialities = specialities.length
+    ? (specialities.split(',') as Speciailty[])
+    : [];
+
+  const filterPipe = pipe(
+    filterCompaniesBySpeciality,
+    filterCompaniesBySearchTerm(searchTerm),
   );
 
-  const result = filterCompaniesBySearchTerm(companiesBySpeciality, searchTerm);
+  const result = filterPipe(selectedSpecialities);
 
   return res(ctx.status(200), ctx.json(result));
 };
@@ -39,17 +44,19 @@ const filterCompaniesBySpeciality = (specialities: Speciailty[]): Company[] => {
   );
 };
 
-const filterCompaniesBySearchTerm = (
-  companiesBySpeciality: Company[],
-  searchTerm: string,
-): Company[] => {
-  if (!searchTerm) {
-    return companiesBySpeciality;
-  }
-  return companiesBySpeciality.filter((company: Company) =>
-    company.name.toLowerCase().includes(searchTerm.toLowerCase()),
-  );
+const filterCompaniesBySearchTerm = (searchTerm: string) => {
+  return (companiesBySpeciality: Company[]): Company[] => {
+    if (!searchTerm) {
+      return companiesBySpeciality;
+    }
+    return companiesBySpeciality.filter((company: Company) =>
+      company.name.toLowerCase().includes(searchTerm.toLowerCase()),
+    );
+  };
 };
+
+const pipe = (...functions: Function[]) => (input: any) =>
+  functions.reduce((acc, fn) => fn(acc), input);
 
 // bind handlers to paths
 const mockApiHandlers = [
