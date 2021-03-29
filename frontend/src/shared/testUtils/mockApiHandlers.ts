@@ -3,7 +3,7 @@ import { rest, RestRequest } from 'msw';
 import { Company, Speciailty } from '../../pages/Dashboard/types';
 import { companies } from './mockData';
 
-const API_ENDPOINT = 'http://localhost:4000';
+const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT as string;
 
 const fetchCompanyById = (req: RestRequest, res: any, ctx: any) => {
   const company = companies.find(

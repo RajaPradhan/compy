@@ -4,7 +4,7 @@ import useCompanyReducer from './useCompanyReducer';
 import { CompaniesActionType, Filters } from 'pages/Dashboard/types';
 
 const useFetchCompanies = () => {
-  const API_ENDPOINT = 'http://localhost:4000';
+  const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT as string;
   const { companyReducer, state: initialCompaniesState } = useCompanyReducer();
   const [companiesState, companiesDispatch] = useReducer(
     companyReducer,
