@@ -107,7 +107,7 @@ const Dashboard = () => {
             data-testid="search-field"
             className={classes.searchTextField}
             placeholder="Search by company name"
-            onChange={debounce(handleSearchTermChange, 100)}
+            onChange={debounce(handleSearchTermChange, 100)} // debounce typing and API calls
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
