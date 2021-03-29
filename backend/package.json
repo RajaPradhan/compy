@@ -13,7 +13,7 @@
         "start": "concurrently npm:start:*",
         "test": "jest -c ./jest.config.json",
         "test:watch": "jest -c ./jest.config.json --watchAll=true",
-        "serve": "yarn build && node ./dist/index.js"
+        "web": "yarn build && node ./dist/index.js"
     },
     "devDependencies": {
         "@types/body-parser": "^1.19.0",
