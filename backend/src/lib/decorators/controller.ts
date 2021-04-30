@@ -1,6 +1,7 @@
 import 'reflect-metadata';
 import { RequestHandler } from 'express';
 
+import { DiContainer } from '../../DiContainer';
 import { Router } from '../../Router';
 import { HttpMethods, MetadataKeys } from './types';
 
@@ -28,7 +29,12 @@ export const controller = (basePath: string) => (target: any): void => {
         if (httpMethod && path) {
             const fullPath = `${basePath}${path}`;
             // use express router to route the request to the routeHandler
-            router[httpMethod](fullPath, routeHandler);
+            router[httpMethod](fullPath, function (...args) {
+                return routeHandler.call(
+                    DiContainer.getControllerContext(target.name),
+                    ...args
+                );
+            });
         }
     }
 };

@@ -3,16 +3,14 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import 'reflect-metadata';
 
+import { DiContainer } from './DiContainer';
 import { Router } from './Router';
-import { DiContainer } from './inversify.config';
 
 let app: Express;
 
-const diContainer = new DiContainer();
-
 try {
-    if (diContainer) {
-        diContainer.bootstrap();
+    if (DiContainer.getContainer()) {
+        DiContainer.bootstrap();
         app = express();
 
         app.use(cors());

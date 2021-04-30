@@ -11,6 +11,7 @@ export interface CompanyFilters {
 }
 
 export const COMPANY_DI_TYPES = {
+    CompanyController: Symbol.for('CompanyController'),
     ICompanyService: Symbol.for('ICompanyService'),
     ICompanyRepository: Symbol.for('ICompanyRepository')
 };

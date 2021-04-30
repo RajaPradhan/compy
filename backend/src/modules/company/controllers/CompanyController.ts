@@ -1,18 +1,13 @@
 import { Request, Response } from 'express';
-import { inject } from 'inversify';
+import { inject, injectable } from 'inversify';
 
 import { controller, get, post } from '../../../lib/decorators';
 import { ICompanyService } from '../services';
 import { COMPANY_DI_TYPES } from '../types';
-// import { container } from '../../../inversify.config';
 
-/**
- * A Singleton Controller class instantiated by the DI framework during application bootstrap
- */
 @controller('')
+@injectable()
 export class CompanyController {
-    private static instance: CompanyController;
-
     constructor(
         @inject(COMPANY_DI_TYPES.ICompanyService)
         public companyService: ICompanyService

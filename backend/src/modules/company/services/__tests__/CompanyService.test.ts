@@ -3,14 +3,15 @@ import 'reflect-metadata';
 import { CompanyService, ICompanyService } from '../CompanyService';
 import { ICompanyRepository } from '../../repositories';
 import { COMPANY_DI_TYPES, Speciailty } from '../../types';
-import { DiContainer } from '../../../../inversify.config';
+import { DiContainer } from '../../../../DiContainer';
 
 describe('Tests for CompanyService', () => {
     let companyService: ICompanyService;
     let companyRepository: ICompanyRepository;
 
     beforeAll(() => {
-        companyRepository = DiContainer.getInstance().get<ICompanyRepository>(
+        DiContainer.bootstrap();
+        companyRepository = DiContainer.getContainer().get<ICompanyRepository>(
             COMPANY_DI_TYPES.ICompanyRepository
         );
         companyService = new CompanyService(companyRepository);
