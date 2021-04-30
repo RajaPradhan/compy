@@ -1,13 +1,17 @@
 import { CompanyController } from '../CompanyController';
 import { ICompanyService } from '../../services';
+import { COMPANY_DI_TYPES } from '../../types';
+import { DiContainer } from '../../../../inversify.config';
 
 describe('Tests for CompanyController', () => {
     let companyController: CompanyController;
     let companyService: ICompanyService;
 
     beforeAll(() => {
-        companyController = CompanyController.getInstance();
-        companyService = companyController.companyService;
+        companyService = DiContainer.getInstance().get<ICompanyService>(
+            COMPANY_DI_TYPES.ICompanyService
+        );
+        companyController = new CompanyController(companyService);
     });
 
     it('should call the getCompanyById method of CompanyService', () => {

@@ -1,16 +1,27 @@
-import express from 'express';
+import express, { Express } from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import 'reflect-metadata';
 
 import { Router } from './Router';
-import './inversify.config';
+import { DiContainer } from './inversify.config';
 
-const app = express();
+let app: Express;
 
-app.use(cors());
+const diContainer = new DiContainer();
 
-app.use(bodyParser.json());
-app.use(Router.getInstance());
+try {
+    if (diContainer) {
+        diContainer.bootstrap();
+        app = express();
+
+        app.use(cors());
+
+        app.use(bodyParser.json());
+        app.use(Router.getInstance());
+    }
+} catch (e) {
+    throw new Error('DI container could not be initialized!');
+}
 
 export { app };

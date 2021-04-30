@@ -2,15 +2,15 @@ import 'reflect-metadata';
 
 import { CompanyService, ICompanyService } from '../CompanyService';
 import { ICompanyRepository } from '../../repositories';
-import { COMPANY_DI_TYPES } from '../../types';
-import { container } from '../../../../inversify.config';
+import { COMPANY_DI_TYPES, Speciailty } from '../../types';
+import { DiContainer } from '../../../../inversify.config';
 
 describe('Tests for CompanyService', () => {
     let companyService: ICompanyService;
     let companyRepository: ICompanyRepository;
 
     beforeAll(() => {
-        companyRepository = container.get<ICompanyRepository>(
+        companyRepository = DiContainer.getInstance().get<ICompanyRepository>(
             COMPANY_DI_TYPES.ICompanyRepository
         );
         companyService = new CompanyService(companyRepository);
@@ -30,7 +30,7 @@ describe('Tests for CompanyService', () => {
 
         const filters = {
             searchTerm: 'constructor',
-            specialities: ['Excavation']
+            specialities: [Speciailty.Excavation]
         };
 
         companyService.getCompanies(filters);

@@ -2,6 +2,7 @@ import 'reflect-metadata';
 
 import { CompanyRepository, ICompanyRepository } from '../CompanyRepository';
 import { companies } from '../../../../data/companies';
+import { Speciailty } from '../../types';
 
 describe('Tests for CompanyRepository', () => {
     let companyRepository: ICompanyRepository;
@@ -18,7 +19,7 @@ describe('Tests for CompanyRepository', () => {
     it('should return a list of companies based on given filter', () => {
         const filters = {
             searchTerm: 'construct',
-            specialities: ['Excavation', 'Plumbing']
+            specialities: [Speciailty.Excavation, Speciailty.Plumbing]
         };
 
         const result = companyRepository.getCompanies(filters);
